@@ -1,0 +1,88 @@
+﻿@model PlacementCell.Models.LoginModelForClass
+@{
+    //ViewBag.Title = "Index";
+   
+}
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+
+
+<link href="~/Content/Main.css" rel="stylesheet" />
+
+<div class="content-wrapper">
+
+    <!-- Content area -->
+    <div class="content">
+
+        <!-- Simple login form -->
+
+        <form method="post">
+            <div class="border">
+                <div class="panel panel-body login-form">
+                    <div class="text-center">
+                        <div class="icon-object border-slate-300 text-slate-300"><i class="icon-reading"></i></div>
+
+                    </div>
+                    <div class="input-buttons">
+                        <img src="~/Content/OmnikartLogin.jpg" class="logo-image" alt="WelcomeOnboard" />
+                        <br />
+
+                        @*<h5 class="content-group">
+                            <small style="margin-left: 10px">Enter your credentials below</small> <br />
+                        </h5>*@
+
+                        <div>
+                            @Html.TextBoxFor(m => m.UserName)
+                            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div>
+                            @Html.PasswordFor(m => m.Password)
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+                        </div>
+                        <div class="forgot-password" style="margin-left:210px">
+                            @Html.ActionLink("Forgot Password?", "ForgotPassword")
+                        </div>
+
+                        <div class="login-failed">
+                            <p style="margin-left:15px">@ViewBag.Error</p>
+                        </div>
+
+                        <div class="form-group" style="margin-top:5px">
+                            <input class="btn btn-primary btn-block btn-lg" type="submit" name="yt0" value="Sign in ">
+                        </div>
+
+                        <div class="go-to-login">
+                            <small style="margin-left: 50px;font-size: 110%;">Not Registered?</small>
+                            @Html.ActionLink("Create An Account", "Registration")
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </form>
+
+
+
+        <!-- /simple login form -->
+        <!-- Footer -->
+        <div class="footer text-muted">
+
+        </div>
+        <!-- /footer -->
+
+    </div>
+    <!-- /content area -->
+
+</div>
+
+<script type="text/javascript">
+    $("#UserName").attr("placeholder", "Enter Email-ID")
+    $("#Password").attr("placeholder", "Enter Password")
+    $("#ConfirmPassword").attr("placeholder", "ConfirmPassword")
+</script>
+

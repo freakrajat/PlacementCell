@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "Dashboard";
+}
+
+
+<link href="~/Content/grid.css" rel="stylesheet" />
+<link href="~/Content/Dashboard.css" rel="stylesheet" />
+
+<link href="~/Content/ionicons.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
+
+<h2>Dashboard</h2>
+
+<section class="dashboard">
+    <div class="row">
+        <div class="col span-1-of-4 openPos"><a href="Vacancy"><i class="ion-briefcase icons"></i>Add Vacancy  </a>
+    </div>
+
+    <div class="col span-1-of-4 CandPro"><a href="GetAllCandidatesProfile"><i class="ion-person-add icons"></i>Profiles Available  </a></div>
+
+  <div class="col span-1-of-4 TotEmp"><a href="GetAllEmployees"><i class="ion-pie-graph icons"></i>Registered Employees  </a></div>
+       <div class="col span-1-of-4 MyProfile"><a href="MyProfile">  <i class="ion-person-stalker icons"></i>My Profile  </a></div>
+    </div>
+</section>
+
+<section class="main-dashboard">
+    <div class="row ">
+        <div class="col span-1-of-2 importExport functions">
+            <div class="functionalities">
+                <a href="ImportEmployees"><i class="ion-ios-upload icons2"></i><span>Import Employees From Excel</span> <br /></a>   
+
+            </div>
+        </div>
+       
+            <div class="col span-1-of-2 evaluation functions">
+                <div class="functionalities">
+
+                    <a href="ScheduleTest">   <i class="ion-social-codepen icons2"></i><span>Schedule Entrance Test</span> <br />   </a>
+
+</div>
+            </div>
+      
+
+</div>
+    <div class="row ">
+        <div class="col span-1-of-2 importExport functions">
+            <div class="functionalities">
+
+                <a href="ExportEmployees"><i class="ion-ios-download icons2"></i><span> Export Employess to Excel</span> <br /></a>
+
+</div>
+        </div>
+        <div class="col span-1-of-2 evaluation functions">
+            <div class="functionalities">
+
+                <a href="SendMailsToEmployees"><i class="ion-email icons2"></i><span>Send Mails</span> <br /></a>  
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col span-1-of-2 importExport functions">
+            <div class="functionalities">
+                <a href="GenerateOfferLetter"><i class="ion-document-text icons2"></i><span>Generate Offer Letter</span> <br /></a>
+</div>
+        </div>
+        <div class="col span-1-of-2 evaluation functions">
+            <div class="functionalities">
+
+                <a href="SubmitEvaluation">  <i class="ion-briefcase icons2"></i><span>Submit HR Evaluation</span> <br /></a>
+
+</div>
+        </div>
+
+    </div>
+</section>

@@ -1,0 +1,168 @@
+﻿@model PlacementCell.Models.EmployeeModelForClass
+@{
+    ViewBag.Title = "Employee";
+}
+
+<link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
+
+<link href="~/Content/grid.css" rel="stylesheet" />
+<link href="~/Content/ionicons.min.css" rel="stylesheet" />
+<link href="~/Content/CreationFile.css" rel="stylesheet" />
+
+<div class="row">
+    <h2>Employee Registration</h2>
+</div>
+
+<div class="row">
+    @using (Html.BeginForm("CreateEmployee", "Home",FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="contact-form">
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            @Html.HiddenFor(m => m.EmployeeID)
+
+
+
+            <div class="row">
+                <div class="col span-1-of-3 label-class">
+                    @Html.LabelFor(model => model.EmployeeName)
+                </div>
+                <div class="col span-2-of-3">
+                    @Html.EditorFor(model => model.EmployeeName)<br />
+
+                    @Html.ValidationMessageFor(model => model.EmployeeName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col span-1-of-3 label-class">
+                    @Html.LabelFor(model => model.Email)
+                </div>
+                <div class="col span-2-of-3">
+                    @Html.EditorFor(model => model.Email)<br />
+
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col span-1-of-3 label-class">
+                    @Html.LabelFor(model => model.DOB)
+                </div>
+                <div class="col span-2-of-3 dateTimeBox">
+                    @Html.EditorFor(model => model.DOB)<br />
+
+                    @Html.ValidationMessageFor(model => model.DOB, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col span-1-of-3 label-class">
+                    @Html.LabelFor(model => model.Location)
+                </div>
+                <div class="col span-2-of-3">
+                    @Html.EditorFor(model => model.Location)<br />
+
+                    @Html.ValidationMessageFor(model => model.Location, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col span-1-of-3 label-class">
+                    @Html.LabelFor(model => model.CTC)
+                </div>
+                <div class="col span-2-of-3">
+
+                    @Html.EditorFor(model => model.CTC)<br />
+                    @Html.ValidationMessageFor(model => model.CTC, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col span-1-of-3 label-class">
+                    @Html.LabelFor(model => model.Designation)
+                </div>
+                <div class="col span-2-of-3 dateTimeBox">
+                    @Html.EditorFor(model => model.Designation)<br />
+
+                    @Html.ValidationMessageFor(model => model.Designation, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col span-1-of-3 label-class">
+                    @Html.LabelFor(model => model.DOJ)
+                </div>
+                <div class="col span-2-of-3">
+                    @Html.EditorFor(model => model.DOJ)<br />
+
+                    @Html.ValidationMessageFor(model => model.DOJ, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col span-1-of-3 label-class">
+                    @Html.Label("Profile Image")
+                </div>
+                <div class="col span-2-of-3">
+                    <input type="file" name="ImageData" id="ImageData" onchange="fileCheck(this);" />
+                   
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col span-1-of-3">
+                    <label>&nbsp;</label>
+                </div>
+                <div class="col span-2-of-3">
+                    <input type="submit" value="Save" style="margin-top:20px">
+                </div>
+            </div>
+
+        </div>
+    }
+</div>
+
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+
+<script type="text/javascript">
+
+    $("#DOB").datepicker();
+    $("#DOJ").datepicker();
+
+    $("#EmployeeName").attr("placeholder", "Enter Name");
+    $("#DOB").attr("placeholder", "Select Date of Birth");
+    $("#Location").attr("placeholder", "Enter Current Location");
+    $("#CTC").attr("placeholder", "Enter Compensation");
+    $("#Designation").attr("placeholder", "Enter Designation");
+    $("#DOJ").attr("placeholder", "Enter Date of Joining");
+    $("#Email").attr("placeholder", "Enter Email");
+
+    $("#submit").on("change", function () {
+
+        if (input.files && input.files[0]) {
+            var filerdr = new FileReader();
+            filerdr.onload = function (e) {
+                $('#ImagePath').attr('src', e.target.result);
+            }
+            filerdr.readAsDataURL(input.files[0]);
+
+        }
+    });
+
+    
+
+
+</script>

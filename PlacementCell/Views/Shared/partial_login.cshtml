@@ -1,0 +1,24 @@
+﻿@if (Request.IsAuthenticated)
+{
+    @*<ul class="nav navbar-nav logout" style="margin-left: 650px;">
+
+        <li><i></i> @Html.ActionLink(User.Identity.Name, "Dashboard", "Home", new { @class = "navbar-brand" })</li>
+        <li>@Html.ActionLink("Logout", "LogOut", "Home", new { @class = "navbar-brand" })</li>
+
+    </ul>*@
+
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            @Html.ActionLink("Hello " + User.Identity.Name + "!", "MyProfile", "Home")
+        </li>
+        <li>@Html.ActionLink("Logout", "LogOut", "Home", new { @class = "navbar-brand" })</li>
+    </ul>
+}
+
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Register", "Registration", "Home", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("Log in", "Index", "Home", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}

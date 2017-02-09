@@ -1,0 +1,159 @@
+
+
+body {
+    /*font-family: "Roboto",Helvetica Neue,Helvetica,Arial,sans-serif;*/
+    font-size: 13px;
+    line-height: 1.5384616;
+    color: #333;
+    font-family: 'Lato','Arial',sans-serif;
+    text-rendering: optimizeLegibility;
+    box-sizing: border-box;
+    /*background-color: #f7f7f7;*/
+}
+
+.content-wrapper {
+    margin-top: 30px;
+}
+
+.content {
+    margin-left: 36%;
+}
+
+h5 {
+    display: inline;
+}
+
+.input-buttons {
+    padding-right: 0;
+}
+
+
+.content-group {
+    margin-top: 50px;
+    margin-left: 58px;
+    font-size: 15px;
+}
+
+.display-block {
+    margin-left: 72px;
+    font-size: 12px;
+}
+
+.panel panel-body login-form {
+    padding-left: 0;
+}
+
+input[type=text],
+input[type=password] {
+    padding: 10px 0;
+    line-height: 135%;
+    border-radius: 5px;
+    margin-top: 20px;
+    border: 1px solid;
+    width: 310px;
+    padding-left: 10px;
+}
+
+input[type=submit] {
+    margin-top: 30px;
+    padding: 10px;
+    margin-left: auto;
+    /*margin-left: 95px;*/
+}
+
+input[type=submit],
+a.btn-full {
+    background-color: #e67e22;
+    border: 1px solid #e67e22;
+    color: #fff;
+    margin-right: 15px;
+}
+
+    input[type=submit]:hover,
+    input[type=submit]:active,
+    a.btn-full {
+        margin-left: auto;
+        background-color: #e99041;
+    }
+
+input[type=submit],
+a.btn-full {
+    margin-left: auto;
+    border: 1px solid #e67e22;
+}
+
+input[type=submit],
+a.btn-full {
+    display: inline-block;
+    padding: 10px 30px;
+    margin-left: auto;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+.logo-image {
+    width: 280px;
+    height: auto;
+    margin-left: 13px;
+    margin-bottom: 10px;
+    border-radius: 25px;
+}
+
+.panel panel-body login-form {
+}
+
+i {
+    width: 10px;
+    height: auto;
+}
+
+
+
+.panel-body {
+    position: relative;
+}
+
+.panel {
+    margin-bottom: 20px;
+    border-color: #ddd;
+    color: #333;
+}
+
+.panel-body {
+    padding: 20px;
+}
+
+.panel {
+    margin-bottom: 20px;
+    /*background-color: #f4f1f1;*/
+    border: 1px solid transparent;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+    margin-top: 8%;
+}
+
+form {
+    width: 355px;
+    margin-top: 0;
+}
+
+.iconClass {
+    color: #747373;
+    width: 10px;
+    font-size: 25px;
+    float: left;
+    overflow: hidden;
+}
+
+.login-failed {
+    margin-top: 20px;
+    color: red;
+}
+
+
+.my-email-label {
+    font-size: 150%;
+}

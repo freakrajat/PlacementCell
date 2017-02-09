@@ -1,0 +1,147 @@
+﻿@model PlacementCell.Models.EmployeeModelForClass
+
+@{
+    ViewBag.Title = "GenerateOfferLetter";
+}
+
+<link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
+
+<link href="~/Content/grid.css" rel="stylesheet" />
+<link href="~/Content/Site.css" rel="stylesheet" />
+<link href="~/Content/ionicons.min.css" rel="stylesheet" />
+<link href="~/Content/CreationFile.css" rel="stylesheet" />
+<h2>Omni Corporates</h2>
+@{
+    var firstName = @Model.EmployeeName.Split(' ').FirstOrDefault();
+}
+
+@Html.ValidationSummary(false);
+<html>
+<head>
+    <title></title>
+
+</head>
+@using (Html.BeginForm("MailOfferLetter", "Home"))
+{
+@Html.HiddenFor(c => c.msg)
+@Html.HiddenFor(c => c.EmployeeID)
+<body>
+
+    <p><strong>@DateTime.UtcNow.Date.ToShortDateString()</strong></p>
+
+    @*<p>&nbsp;</p>*@
+
+    <p><strong>@Model.EmployeeName</strong></p>
+
+
+    <p align="center"><strong>OFFER LETTER</strong></p>
+
+    <p align="center">&nbsp;</p>
+
+    @*<p>&nbsp;</p>*@
+
+    <p>Dear @firstName,</p>
+
+    @*<p>&nbsp;</p>*@
+
+    <p>Welcome to the Omni Corporate family!</p>
+
+    <p>At <strong>Omni Corporate, </strong>you will experience an environment charged with enthusiasm and one that offers huge growth potential for individuals who live the Company vision with a passion.</p>
+
+    @*<p>&nbsp;</p>*@
+
+    <p>We are pleased to make you an offer of employment to join <strong>Omni Corporate, Pune </strong>on the following terms and conditions.&nbsp;</p>
+
+    @*<p>&nbsp;</p>*@
+
+
+    <p style="color:blue"><strong>Appointment Terms and Conditions</strong></p>
+
+    <ul>
+        <li value="1.1">You shall be appointed as <strong>@Model.Designation </strong></li>
+        <li value="1.2">The duration of your contract is<strong> : 2 years </strong></li>
+        <li value="1.3">Your Date of Joining will be <strong>@Model.DOJ</strong>. The offer will stand revoked if you are unable to join us on the said date.</li>
+        <li value="1.4">Your probationary period is <strong>6 months</strong> from your date of joining. During the probation period, the Company and the Employee shall both have the right to terminate this Agreement by providing a prior written notice of 3 days. Upon confirmation, resignation/ termination should be followed by one month notice or payment in lieu thereof.</li>
+        <li value="1.5">You will have Annual paid leave of <strong>21</strong> working days and other holidays as per Indian Labor Law.</li>
+        <li value="1.6">Sick leave with full payment in accordance to Indian Labour Law. Such leave is subject to three months of continuous service.</li>
+        <li value="1.7">As an employee of the organisation, your <strong>Annual Cost to Company</strong> will be<strong> INR @Model.CTC . </strong>(Refer Annexure-I for details)</li>
+        <li value="1.8">You will be based in <strong>Pune, India</strong> but will serve the Company or any of its subsidiaries or associated companies in any location within or outside of India.</li>
+        <li value="1.9">Your employment with the Company is subject to you providing (by email or in hard copy) an accepted copy of your resignation from current employer within ten calendar days of having received this offer/ letter of intent.</li>
+        <li value="1.1">Subject to Visa clarification and verification, post completion of documents, in case your Labor Card is rejected due to known or unknown reasons, Omni Corporates shall have no legal binding and offer letter shall be automatically revoked.</li>
+    </ul>
+
+    <p style="margin-left:35.45pt;"></p>
+
+    <p>This employment offer is valid for thirty (30) calendar days from the above date and is contingent upon you passing your medical examination and obtaining your Residence Permit with our company.&nbsp;</p>
+
+    @*<p>&nbsp;</p>*@
+
+    <p>If you are in agreement with the employment offer, please acknowledge your acceptance by signing below.&nbsp;</p>
+
+    <p>We look forward to your dedication and commitment as we work together and wish you many fruitful years here at Omni Corporates, Pune.</p>
+
+    @*<p>&nbsp;</p>*@
+
+    <p>With best wishes,</p>
+
+    @*<p>&nbsp;</p>*@
+
+    <p>For <strong>Omni Corporates </strong></p>
+
+    <p>&nbsp;</p>
+
+    <p>&nbsp;</p>
+
+    @*<p>&nbsp;</p>*@
+
+    @*<p>&nbsp;</p>
+
+        <p>&nbsp;</p>*@
+
+    <p>(Authorized Signatory)</p>
+
+    <p>&nbsp;</p>
+
+    <p><strong>&nbsp;I have read and accept the terms and conditions of employment as explained above.</strong></p>
+
+    @*<p>&nbsp;</p>
+
+        <p>&nbsp;</p>*@
+
+    <p><strong>Signed __________________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Date:&nbsp;&nbsp; _______________</strong></p>
+
+    <p>&nbsp;</p>
+
+       <div class="row">
+    <div class="col span-1-of-3">
+        <label>&nbsp;</label>
+    </div>
+    <div class="col span-2-of-3">
+        <input type="submit" value="Send Mail!" style="margin-left:125px" id="submit" />
+    </div>
+    </div>
+
+</body>
+}
+</html>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+@*<script src="~/Scripts/jquery.validate.min.js"></script>*@
+
+<script type="text/javascript">
+
+    $("#submit").on("click", function () {
+
+       // var a = $("body").html().toString();
+        var c = $("body").text();
+        var b = $("#EmployeeID").val()
+        $("#msg").val(c);
+        $("#EmployeeID").val(b);
+    });
+
+   
+
+    </script>

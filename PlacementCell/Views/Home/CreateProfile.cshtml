@@ -1,0 +1,169 @@
+﻿@model PlacementCell.Models.CandidateProfileModelForClass
+
+
+@{
+    ViewBag.Title = "CreateProfile";
+}
+
+<link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
+
+<link href="~/Content/grid.css" rel="stylesheet" />
+<link href="~/Content/ionicons.min.css" rel="stylesheet" />
+<link href="~/Content/CreationFile.css" rel="stylesheet" />
+
+<div class="row">
+    <h2>Create Career Profile</h2>
+</div>
+
+
+<div class="row">
+    @using (Html.BeginForm("CreateProfile", "Home"))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="contact-form">
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            @Html.HiddenFor(m => m.CanProfileID)
+
+            <div class="row">
+                <div class="col span-1-of-3 label-class">
+                    @Html.LabelFor(model => model.VacancyID)
+                </div>
+                <div class="col span-2-of-3">
+                    @Html.DropDownListFor(model => model.VacancyID, new SelectList(Model.vacancyList, "VacancyID", "VacancyTitle"), "Select Vacancy To Apply")<br />
+
+                    @Html.ValidationMessageFor(model => model.VacancyID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col span-1-of-3 label-class">
+                    @Html.LabelFor(model => model.CandidateName)
+                </div>
+                <div class="col span-2-of-3">
+                    @Html.EditorFor(model => model.CandidateName)<br />
+
+                    @Html.ValidationMessageFor(model => model.CandidateName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col span-1-of-3 label-class">
+                    @Html.LabelFor(model => model.Email)
+                </div>
+                <div class="col span-2-of-3">
+                    @Html.EditorFor(model => model.Email)<br />
+
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col span-1-of-3 label-class">
+                    @Html.LabelFor(model => model.DOB)
+                </div>
+                <div class="col span-2-of-3 dateTimeBox">
+                    @Html.EditorFor(model => model.DOB)<br />
+
+                    @Html.ValidationMessageFor(model => model.DOB, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col span-1-of-3 label-class">
+                    @Html.LabelFor(model => model.Location)
+                </div>
+                <div class="col span-2-of-3">
+                    @Html.EditorFor(model => model.Location)<br />
+
+                    @Html.ValidationMessageFor(model => model.Location, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col span-1-of-3 label-class">
+                    @Html.LabelFor(model => model.Gender)
+                </div>
+                <div class="col span-2-of-3">
+                    @Html.DropDownListFor(model => model.Gender, new List<SelectListItem>
+                        {
+                        new SelectListItem{ Text="Select Gender", Value = "0" },
+                        new SelectListItem{ Text="Male", Value = "Male" },
+                        new SelectListItem{ Text="Female", Value = "Female" }})<br />
+
+                        @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+</div>
+            </div>
+
+
+            <div class="row">
+                <div class="col span-1-of-3 label-class">
+                    @Html.LabelFor(model => model.Percentage10)
+                </div>
+                <div class="col span-2-of-3 dateTimeBox">
+                    @Html.EditorFor(model => model.Percentage10)<br />
+
+                    @Html.ValidationMessageFor(model => model.Percentage10, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col span-1-of-3 label-class">
+                    @Html.LabelFor(model => model.Percentage12)
+                </div>
+                <div class="col span-2-of-3">
+                    @Html.EditorFor(model => model.Percentage12)<br />
+
+                    @Html.ValidationMessageFor(model => model.Percentage12, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col span-1-of-3 label-class">
+                    @Html.LabelFor(model => model.TotalExp)
+                </div>
+                <div class="col span-2-of-3">
+                    @Html.EditorFor(model => model.TotalExp)<br />
+
+                    @Html.ValidationMessageFor(model => model.TotalExp, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col span-1-of-3">
+                    <label>&nbsp;</label>
+                </div>
+                <div class="col span-2-of-3">
+                    <input type="submit" value="Save" style="margin-top:20px">
+                </div>
+            </div>
+
+        </div>
+    }
+</div>
+
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+
+<script type="text/javascript">
+
+    $("#DOB").datepicker();
+    $("#CandidateName").attr("placeholder", "Enter Your Name");
+    $("#DOB").attr("placeholder", "Select DOB");
+    $("#Location").attr("placeholder", "Enter Your Current Location");
+    $("#Percentage10").attr("placeholder", "Enter Your 10th Percentage");
+    $("#Percentage12").attr("placeholder", "Enter Your 12th Percentage");
+    $("#TotalExp").attr("placeholder", "Enter Your Total Experience");
+</script>

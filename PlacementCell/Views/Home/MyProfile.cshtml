@@ -1,0 +1,78 @@
+﻿@model PlacementCell.Models.EmployeeModelForClass
+
+@{
+    ViewBag.Title = "MyProfile";
+}
+
+<link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/grid.css" rel="stylesheet" />
+<link href="~/Content/Site.css" rel="stylesheet" />
+<link href="~/Content/ionicons.min.css" rel="stylesheet" />
+<link href="~/Content/CreationFile.css" rel="stylesheet" />
+<body>
+    <div class="row">
+        <h2>My Profile</h2>
+    </div>
+
+    @using (Html.BeginForm("UploadImage", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+
+        <div class="row">
+            <div class="col span-1-of-3 my-image-div">
+
+                @if (@ViewBag.ImageData != null)
+                {
+                <img src="@ViewBag.ImageData" alt="" class="my-image" />
+                }
+                else
+                {
+                <img src="~/Content/no-image.jpg" alt="" class="my-image" />
+                }
+
+            </div>
+            <div class="col span-2-of-3 my-details">
+                <div class="my-details-2">
+
+                    <div class="row">
+                        <div class="col span-1-of-2">
+                            <i class="ion-person icons-my-profile"></i> @Html.Label("Name")
+                        </div>
+                        <div class="col span-1-of-2">
+                            @Html.DisplayFor(x => x.EmployeeName)
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col span-1-of-2">
+                            <i class="ion-android-clipboard icons-my-profile"></i> @Html.LabelFor(x => x.Designation)
+                        </div>
+                        <div class="col span-1-of-2">
+                            @Html.DisplayFor(x => x.Designation)
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col span-1-of-2">
+                            <i class="ion-android-mail icons-my-profile"></i>   @Html.LabelFor(x => x.Email)
+                        </div>
+                        <div class="col span-1-of-2">
+                            @Html.DisplayFor(x => x.Email)
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        @*<div class="row">
+                <div class="col span-1-of-3">
+                    <label>&nbsp;</label>
+                </div>
+                <div class="col span-2-of-3">
+                    <input type="submit" value="Save" style="margin-top:20px">
+                </div>
+            </div>*@
+    }
+</body>

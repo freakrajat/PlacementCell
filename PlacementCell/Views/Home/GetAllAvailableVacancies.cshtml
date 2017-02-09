@@ -1,0 +1,79 @@
+﻿@model IEnumerable<PlacementCell.Models.VacancyModelForClass>
+
+@{
+    ViewBag.Title = "GetAllAvailableVacancies";
+}
+
+<link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
+
+<link href="~/Content/grid.css" rel="stylesheet" />
+<link href="~/Content/Site.css" rel="stylesheet" />
+<link href="~/Content/ionicons.min.css" rel="stylesheet" />
+<link href="~/Content/CreationFile.css" rel="stylesheet" />
+<h2>Openings @@ Omni Corporates</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Vacancy")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.VacancyTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumPosition)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Skills)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExpRequired)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Domain)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostingDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DatePosted)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.VacancyTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumPosition)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Skills)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExpRequired)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Domain)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostingDate)
+        </td>
+       
+        <td>
+            @Html.ActionLink("Edit", "EditVacancy", new { id=item.VacancyID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.VacancyID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.VacancyID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,135 @@
+﻿@model PlacementCell.Models.VacancyModelForClass
+@{
+    ViewBag.Title = "Vacancy";
+}
+
+<link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
+
+<link href="~/Content/grid.css" rel="stylesheet" />
+@*<link href="~/Content/Site.css" rel="stylesheet" />*@
+<link href="~/Content/ionicons.min.css" rel="stylesheet" />
+<link href="~/Content/CreationFile.css" rel="stylesheet" />
+
+
+<div class="row">
+    <h2>Omni Corporate Vacancies</h2>
+</div>
+<div class="row">
+
+    @using (Html.BeginForm("Vacancy", "Home"))
+    {
+        @Html.AntiForgeryToken()
+        <div class="contact-form">
+            @*<h4>CandidateRegistrationModel</h4>*@
+            <hr />
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            @Html.HiddenFor(model => model.VacancyID)
+
+            <div class=row>
+                <div class="col span-1-of-3 label-class">
+                    @Html.LabelFor(model => model.VacancyTitle)
+                </div>
+                <div class="col span-2-of-3">
+                    @Html.EditorFor(model => model.VacancyTitle)<br />
+                    @Html.ValidationMessageFor(model => model.VacancyTitle, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <div class=row>
+                <div class="col span-1-of-3 label-class">
+                    @Html.LabelFor(model => model.Skills)
+                </div>
+                <div class="col span-2-of-3">
+                    @Html.EditorFor(model => model.Skills)<br />
+                    @Html.ValidationMessageFor(model => model.Skills, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col span-1-of-3 label-class">
+                    @Html.LabelFor(model => model.NumPosition)
+                </div>
+                <div class="col span-2-of-3">
+                    @Html.EditorFor(model => model.NumPosition)<br />
+                    @Html.ValidationMessageFor(model => model.NumPosition, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col span-1-of-3 label-class">
+                    @Html.LabelFor(model => model.ExpRequired)
+                </div>
+                <div class="col span-2-of-3">
+                    @Html.EditorFor(model => model.ExpRequired)<br />
+                    @Html.ValidationMessageFor(model => model.ExpRequired, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col span-1-of-3 label-class">
+                    @Html.LabelFor(model => model.Location)
+                </div>
+                <div class="col span-2-of-3">
+                    @Html.EditorFor(model => model.Location)<br />
+                    @Html.ValidationMessageFor(model => model.Location, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col span-1-of-3 label-class">
+                    @Html.LabelFor(model => model.Domain)
+                </div>
+                <div class="col span-2-of-3">
+                    @Html.EditorFor(model => model.Domain)<br />
+                    @Html.ValidationMessageFor(model => model.Domain, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col span-1-of-3 label-class">
+                    @Html.LabelFor(model => model.PostingDate)
+                </div>
+                <div class="col span-2-of-3 dateTimeBox">
+                    @Html.EditorFor(model => model.PostingDate)<br/>
+
+                    @Html.ValidationMessageFor(model => model.PostingDate, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col span-1-of-3">
+                    <label>&nbsp;</label>
+                </div>
+                <div class="col span-2-of-3">
+                    <input type="submit" value="Save" style="margin-top:20px">
+                </div>
+            </div>
+
+
+        </div>
+    }
+</div>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+
+<script type="text/javascript">
+
+    $("#PostingDate").datepicker();
+    $("#VacancyTitle").attr("placeholder", "Enter Vacancy Title");
+    $("#PostingDate").attr("placeholder", "Enter Posting Date");
+    $("#Domain").attr("placeholder", "Enter Domain of the Vacancy");
+    $("#Location").attr("placeholder", "Enter Location of the Vacancy");
+    $("#ExpRequired").attr("placeholder", "Enter Minimum Experience Required");
+    $("#NumPosition").attr("placeholder", "Enter Number of Vancancies");
+    $("#Skills").attr("placeholder", "Enter the Skills Required");
+
+</script>

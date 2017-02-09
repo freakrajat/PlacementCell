@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EE9A2560-4ACE-4FFD-AF38-E3EB382B15BA}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PlacementCell</RootNamespace>
+    <AssemblyName>PlacementCell</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServerCompact">
+      <HintPath>..\packages\EntityFramework.SqlServerCompact.6.1.3\lib\net45\EntityFramework.SqlServerCompact.dll</HintPath>
+    </Reference>
+    <Reference Include="HiQPdf">
+      <HintPath>..\packages\hiqpdf.10.5\lib\net40\HiQPdf.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NPOI">
+      <HintPath>..\packages\NPOI.2.2.1\lib\net40\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>..\packages\NPOI.2.2.1\lib\net40\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>..\packages\NPOI.2.2.1\lib\net40\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>..\packages\NPOI.2.2.1\lib\net40\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.SqlServer.Compact.4.0.8876.1\lib\net40\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.1.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.1.2\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.1.2\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.1.2\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.1.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.1.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\404 error.png" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CreationFile.css" />
+    <Content Include="Content\Dashboard.css" />
+    <Content Include="Content\DSC_3742.jpg" />
+    <Content Include="Content\grid.css" />
+    <Content Include="Content\ionicons.min.css" />
+    <Content Include="Content\ionicons.svg" />
+    <Content Include="Content\Layout.css.css" />
+    <Content Include="Content\Login-Signup.css" />
+    <Content Include="Content\Main.css" />
+    <Content Include="Content\no-image.jpg" />
+    <Content Include="Content\OmnikartLogin.jpg" />
+    <Content Include="Content\pexels-photo-29642.jpg" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\ionicons.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\ionicons.eot" />
+    <Content Include="Content\ionicons.ttf" />
+    <Content Include="Content\ionicons.woff" />
+    <Content Include="fonts\ionicons.eot" />
+    <Content Include="fonts\ionicons.ttf" />
+    <Content Include="fonts\ionicons.woff" />
+    <Content Include="Scripts\Choosen\package.json" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Choosen\chosen.css" />
+    <Content Include="Scripts\Choosen\chosen.jquery.js" />
+    <Content Include="Scripts\Choosen\chosen.jquery.min.js" />
+    <Content Include="Scripts\Choosen\chosen.min.css" />
+    <Content Include="Scripts\Choosen\chosen.proto.js" />
+    <Content Include="Scripts\Choosen\chosen.proto.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Home\MainHRView.cshtml" />
+    <Content Include="Views\Home\GetAllEmployees.cshtml" />
+    <Content Include="Views\Home\Dashboard.cshtml" />
+    <Content Include="Views\Home\Vacancy.cshtml" />
+    <Content Include="Views\Home\GetAllAvailableVacancies.cshtml" />
+    <Content Include="Views\Home\CreateProfile.cshtml" />
+    <Content Include="Views\Home\GetAllCandidatesProfile.cshtml" />
+    <Content Include="Views\Home\ScheduleTest.cshtml" />
+    <Content Include="Views\Home\ScheduledTests.cshtml" />
+    <Content Include="Views\Home\Employee.cshtml" />
+    <Content Include="Views\Home\GenerateOfferLetter.cshtml" />
+    <Content Include="Views\Home\MyProfile.cshtml" />
+    <Content Include="Views\Home\SubmitEvaluation.cshtml" />
+    <Content Include="Views\Home\SendMailsToEmployees.cshtml" />
+    <Content Include="Views\Home\Registration.cshtml" />
+    <Content Include="Views\Home\ForgotPassword.cshtml" />
+    <Content Include="Views\Shared\partial_login.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
+    <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
+    <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
+    <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />
+    <None Include="_bin_deployableAssemblies\x86\sqlceer40EN.dll" />
+    <None Include="_bin_deployableAssemblies\x86\sqlcecompact40.dll" />
+    <None Include="_bin_deployableAssemblies\x86\sqlceca40.dll" />
+    <None Include="_bin_deployableAssemblies\x86\Microsoft.VC90.CRT\README_ENU.txt" />
+    <None Include="_bin_deployableAssemblies\x86\Microsoft.VC90.CRT\msvcr90.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\sqlcese40.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\sqlceqp40.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\sqlceme40.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\sqlceer40EN.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\sqlcecompact40.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\sqlceca40.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\README_ENU.txt" />
+    <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\msvcr90.dll" />
+    <None Include="_bin_deployableAssemblies\x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BusinessLogicClasses\ExcelOperations.cs" />
+    <Compile Include="BusinessLogicClasses\HrLoginCheck.cs" />
+    <Compile Include="BusinessLogicClasses\SendAutomatedMails.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701171556568_CreatingDatabaseWithTables.cs" />
+    <Compile Include="Migrations\201701171556568_CreatingDatabaseWithTables.Designer.cs">
+      <DependentUpon>201701171556568_CreatingDatabaseWithTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701171600141_RemoveColumnFromVacancy.cs" />
+    <Compile Include="Migrations\201701171600141_RemoveColumnFromVacancy.Designer.cs">
+      <DependentUpon>201701171600141_RemoveColumnFromVacancy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701171710265_ChangeInDateFormat.cs" />
+    <Compile Include="Migrations\201701171710265_ChangeInDateFormat.Designer.cs">
+      <DependentUpon>201701171710265_ChangeInDateFormat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701171819113_AddedEmailInCandiadteTable.cs" />
+    <Compile Include="Migrations\201701171819113_AddedEmailInCandiadteTable.Designer.cs">
+      <DependentUpon>201701171819113_AddedEmailInCandiadteTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701171826375_EditEmailColumnInCandiadteTable.cs" />
+    <Compile Include="Migrations\201701171826375_EditEmailColumnInCandiadteTable.Designer.cs">
+      <DependentUpon>201701171826375_EditEmailColumnInCandiadteTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701171828552_EditEmailColumnInCandiadteTable1.cs" />
+    <Compile Include="Migrations\201701171828552_EditEmailColumnInCandiadteTable1.Designer.cs">
+      <DependentUpon>201701171828552_EditEmailColumnInCandiadteTable1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701311443555_NewEvaluationTable.cs" />
+    <Compile Include="Migrations\201701311443555_NewEvaluationTable.Designer.cs">
+      <DependentUpon>201701311443555_NewEvaluationTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701311549071_AddedDesignationColumnInTable.cs" />
+    <Compile Include="Migrations\201701311549071_AddedDesignationColumnInTable.Designer.cs">
+      <DependentUpon>201701311549071_AddedDesignationColumnInTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701311557489_AddedDOJcolumn.cs" />
+    <Compile Include="Migrations\201701311557489_AddedDOJcolumn.Designer.cs">
+      <DependentUpon>201701311557489_AddedDOJcolumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701311725097_ImageTable.cs" />
+    <Compile Include="Migrations\201701311725097_ImageTable.Designer.cs">
+      <DependentUpon>201701311725097_ImageTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702011622137_AddedLoginToEmployee.cs" />
+    <Compile Include="Migrations\201702011622137_AddedLoginToEmployee.Designer.cs">
+      <DependentUpon>201702011622137_AddedLoginToEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\CandidateProfileModelForClass.cs" />
+    <Compile Include="Models\EvaluationModelForClass.cs" />
+    <Compile Include="Models\MailFieldsModel.cs" />
+    <Compile Include="Models\ProfileImageModelForClass.cs" />
+    <Compile Include="Models\UserProfileModel.cs" />
+    <Compile Include="PlacementCellDBModel\CandidateEvaluationDBModel.cs" />
+    <Compile Include="PlacementCellDBModel\CandidateProfileDBModel.cs" />
+    <Compile Include="Models\EmployeeModelForClass.cs" />
+    <Compile Include="PlacementCellDBModel\EmployeeDBModel.cs" />
+    <Compile Include="Models\LoginModelForClass.cs" />
+    <Compile Include="PlacementCellDBModel\LoginDBModel.cs" />
+    <Compile Include="Models\PlacementTestForClass.cs" />
+    <Compile Include="PlacementCellDBModel\PlacementDBTest.cs" />
+    <Compile Include="Models\VacancyModelForClass.cs" />
+    <Compile Include="PlacementCellDBModel\ProfileImageDBModel.cs" />
+    <Compile Include="PlacementCellDBModel\VacancyModelDB.cs" />
+    <Compile Include="PlacementCellDBModel\PlacementCellDBContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\UserListModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="obj\" />
+    <Folder Include="Views\Vacancy\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201701171556568_CreatingDatabaseWithTables.resx">
+      <DependentUpon>201701171556568_CreatingDatabaseWithTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701171600141_RemoveColumnFromVacancy.resx">
+      <DependentUpon>201701171600141_RemoveColumnFromVacancy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701171710265_ChangeInDateFormat.resx">
+      <DependentUpon>201701171710265_ChangeInDateFormat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701171819113_AddedEmailInCandiadteTable.resx">
+      <DependentUpon>201701171819113_AddedEmailInCandiadteTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701171826375_EditEmailColumnInCandiadteTable.resx">
+      <DependentUpon>201701171826375_EditEmailColumnInCandiadteTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701171828552_EditEmailColumnInCandiadteTable1.resx">
+      <DependentUpon>201701171828552_EditEmailColumnInCandiadteTable1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701311443555_NewEvaluationTable.resx">
+      <DependentUpon>201701311443555_NewEvaluationTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701311549071_AddedDesignationColumnInTable.resx">
+      <DependentUpon>201701311549071_AddedDesignationColumnInTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701311557489_AddedDOJcolumn.resx">
+      <DependentUpon>201701311557489_AddedDOJcolumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701311725097_ImageTable.resx">
+      <DependentUpon>201701311725097_ImageTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702011622137_AddedLoginToEmployee.resx">
+      <DependentUpon>201702011622137_AddedLoginToEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>13045</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:13045/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
