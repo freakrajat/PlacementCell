@@ -15,6 +15,9 @@
 <p>
     @Html.ActionLink("Create New", "Vacancy")
 </p>
+<p>
+    @Html.ActionLink("Apply", "CreateProfile", "Home")
+</p>
 <table class="table">
     <tr>
         <th>
@@ -38,42 +41,43 @@
         <th>
             @Html.DisplayNameFor(model => model.PostingDate)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DatePosted)
-        </th>
+     
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.VacancyTitle)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NumPosition)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Skills)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ExpRequired)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Location)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Domain)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PostingDate)
-        </td>
-       
-        <td>
-            @Html.ActionLink("Edit", "EditVacancy", new { id=item.VacancyID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.VacancyID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.VacancyID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VacancyTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumPosition)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Skills)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExpRequired)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Domain)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostingDate)
+            </td>
+
+
+            @*<td>
+                    @Html.ActionLink("Edit", "EditVacancy", new { id=item.VacancyID }) |
+                    @Html.ActionLink("Details", "Details", new { id=item.VacancyID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id=item.VacancyID })
+
+                </td>*@
+        </tr>
+    }
 
 </table>

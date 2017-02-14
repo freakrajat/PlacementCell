@@ -38,14 +38,18 @@ namespace PlacementCell.Controllers
             }
             else
             {
+                //LoginDBModel loginDB = new LoginDBModel();
+                //loginDB = dbObj.LoginTable.First(x => x.UserName == loginModel.UserName);
                 HrLoginCheck checkUser = new HrLoginCheck();
                 if (checkUser.CheckLogin(loginModel))
                 {
                     FormsAuthentication.SetAuthCookie(loginModel.UserName, loginModel.RememberMe);
                     return RedirectToAction("Dashboard");
                 }
+
                 ViewBag.Error = "Please Enter Valid Username/Password To Login!";
                 return View();
+
             }
         }
 
@@ -398,7 +402,8 @@ namespace PlacementCell.Controllers
 
                 dbObj.CandidateProfileTable.Add(canDb);
                 dbObj.SaveChanges();
-                return RedirectToAction("GetAllCandidatesProfile");
+               // return RedirectToAction("GetAllCandidatesProfile");
+                return View("ThanksForApplying");
             }
             else
             {
@@ -418,7 +423,8 @@ namespace PlacementCell.Controllers
 
                 //  candidateToEdit.VacancyID.VacancyID = cpm.VacancyID;   //Issue is here
                 dbObj.SaveChanges();
-                return RedirectToAction("GetAllCandidatesProfile");
+               // return RedirectToAction("GetAllCandidatesProfile");
+                return View("ThanksForApplying");
             }
         }
 
@@ -596,6 +602,7 @@ namespace PlacementCell.Controllers
 
         #endregion
 
+       
         public ActionResult MyProfile()
         {
             var employee = dbObj.EmployeeTable.Find(GetIdFromEmail(User.Identity.Name));
@@ -733,7 +740,7 @@ namespace PlacementCell.Controllers
             return userId;
         }
 
-      
+
     }
 
 

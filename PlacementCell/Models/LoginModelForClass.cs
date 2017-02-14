@@ -26,6 +26,9 @@ namespace PlacementCell.Models
         [Compare("Password")]
         public string ConfirmPassword { get; set; }
 
+        //[Required]
+        //public string Role { get; set; }
+
         [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }
     }
